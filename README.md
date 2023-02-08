@@ -15,7 +15,7 @@ Usig Magento_Theme/layout/default.xml page's unwanted blocks are remove and elem
 </div>
 ~~~
 ## Footer Social Links Section
-1. Using Admin Dasboard/Content/Blocks option create a one custom block, name it as footer_social_links
+1. Using Admin Dasboard/Content/Blocks option create a one custom block with Block Title as 'Footer Social Links Block' and identifier as 'footer_social_links'
 2. With help of page builder option add the below code in 'HTML Code' element
 ~~~
 <div class="footer-social">
@@ -28,3 +28,17 @@ Usig Magento_Theme/layout/default.xml page's unwanted blocks are remove and elem
 </ul>
 </div>
 ~~~
+3. Using Admin Dashboard/Content/Widget create one new widget, name it as 'Footer Social Icons'
+4. Add layout update then choose container 'Page Footer Container'
+5. Then widget option and choos the block we created one 'Footer Social Links Block'
+## Footer Hot Links Section
+1. Using Admin Dasboard/Content/Blocks option create a one custom block with Block Title as 'Footer Hotline Block' and identifier it as 'footer_hotline_block'
+2. With help of page builder option add the below code in 'HTML Code' element
+~~~
+<div class="footer-hotline-section">
+<p>Hotline: 001-888-8888</p>
+</div>
+~~~
+3. Using Admin Dashboard/Content/Widget create one new widget, name it as 'Footer Hotline'
+4. Add layout update then choose container 'Page Footer Container'
+5. Then widget option and choos the block we created one 'Footer Hotline Block'
