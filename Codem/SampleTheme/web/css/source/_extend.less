@@ -32,7 +32,6 @@ li.link.authorization-link a {
 }
 .navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top{
     border: none;
-    border-style: none;
 }
 .page-products .sorter {
     position: static;
@@ -87,13 +86,19 @@ p.newsletter-title {
 }
 input#newsletter {
     background: transparent;
-    border-right: 0px;
+    border-right: 0;
+    height: 50px;
+    width: 420px;
+}
+.block.newsletter .action.subscribe{
+    height: 50px;
+    margin-left: 193px;
 }
 button.action.subscribe.primary {
     color: #000;
     background: transparent;
     border: 1px solid #c2c2c2;
-    border-left: 0px;
+    border-left: 0;
     height: 32px;
 }
 
@@ -170,7 +175,7 @@ span.paget-title, .pages a.page, .pages a.page:visited {
     display: none !important;
 }
 .filter-options-item{
-    border: 0px !important;
+    border: 0 !important;
 }
 .swatch-attribute.size .swatch-option, .swatch-attribute.manufacturer .swatch-option {
     background: transparent !important;
@@ -195,7 +200,7 @@ a.action.showcart:after {
 }
 
 @media screen and (min-width: 769px) {
-    navigation {
+    .navigation {
         float: left;
     }
     .block-search {
