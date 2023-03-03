@@ -16,8 +16,7 @@
     <?php if ($block->getLastPageNum() > 1):?>
         <?= $block->escapeHtml(
             __(
-                'show %1-%2 of %3 products',
-                '<span class="toolbar-number">' . $localeFormatter->formatNumber($block->getFirstNum()) . '</span>',
+                'show %1 of %2 products',
                 '<span class="toolbar-number">' . $localeFormatter->formatNumber($block->getLastNum()) . '</span>',
                 '<span class="toolbar-number">' . $localeFormatter->formatNumber($block->getTotalNum()) . '</span>'
             ),

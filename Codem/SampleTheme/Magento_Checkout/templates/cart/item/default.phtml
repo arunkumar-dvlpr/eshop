@@ -106,7 +106,7 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                     <input id="cart-<?= $block->escapeHtmlAttr($_item->getId()) ?>-qty"
                            name="cart[<?= $block->escapeHtmlAttr($_item->getId()) ?>][qty]"
                            data-cart-item-id="<?= $block->escapeHtmlAttr($_item->getSku()) ?>"
-                           value="<?= $block->escapeHtmlAttr($block->getQty()) ?>"
+                           value="<?= str_pad($block->escapeHtmlAttr($block->getQty()),  2, '0', STR_PAD_LEFT); ?>"
                            type="number"
                            size="4"
                            step="any"
@@ -130,14 +130,30 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                     var currentQty = $("#cart-"+ctrl+"-qty").val();
                     if($this.hasClass('increaseQty')){
                         var newAdd = parseInt(currentQty)+parseInt(1);
-                        $("#cart-"+ctrl+"-qty").val(newAdd);
+                        $("#cart-"+ctrl+"-qty").val(addLeadingZeros(newAdd));
                     }else{
                         if(currentQty>1){
                             var newAdd = parseInt(currentQty)-parseInt(1);
-                            $("#cart-"+ctrl+"-qty").val(newAdd);
+                            $("#cart-"+ctrl+"-qty").val(addLeadingZeros(newAdd));
                         }
                     }
                 });
+
+                $('.input-text.qty').on('change', function(){
+                    let qty = $(this).val();
+                    $(this).val(addLeadingZeros(parseInt(qty)));
+                });
+
+                function addLeadingZeros(num){
+                    if(!isNaN( num )){
+                        if(num < 10) {
+                           return '0' + num;
+                        }else{
+                            return num;
+                        }
+                    }
+                }
+
             });
         </script>
     </td>
